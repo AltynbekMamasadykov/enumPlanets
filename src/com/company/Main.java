@@ -6,75 +6,51 @@ public class Main {
 
         Planet[] planets = Planet.values();
 
-//        findAPlanetThatIsLessThanDays(planets);
-//        System.out.println();
-//        findAPlanetThatIsMoreThanDays(planets);
-//        System.out.println();
-
-        findAPlanetThatIsLessThanDays2(planets);
+        System.out.println(findAPlanetThatIsLessThanDays(planets));
         System.out.println();
-        findAPlanetThatIsMoreThanDays2(planets);
+        System.out.println(findAPlanetThatIsMoreThanDays(planets));
 
 
     }
 
-    static  Planet findAPlanetThatIsLessThanDays2(Planet[] planets){
+    static  Planet findAPlanetThatIsLessThanDays(Planet[] planets){
         System.out.println("Planet with fewer days");
+        int ordinal = -1;
         int min = planets[0].getDays();
       for (int i = 0; i<planets.length;i++){
           if(planets[i].getDays()<min){
               min = planets[i].getDays();
           }
-      }System.out.println(min+" days");
+      }//System.out.println(min+" days");
 
         for (int j = 0; j<planets.length;j++){
             if(planets[j].getDays()==min){
-                System.out.println(planets[j].name());
-
+    //                System.out.println(planets[j].name());
+                ordinal = planets[j].ordinal();
             }
         }
-      return null;
-
+      return planets[ordinal];
     }
 
-    static  Planet findAPlanetThatIsMoreThanDays2(Planet[] planets){
+    static  Planet findAPlanetThatIsMoreThanDays(Planet[] planets){
         System.out.println("Planet with more days");
+        int ordinal = -1;
         int max = planets[0].getDays();
         for (int i = 0; i<planets.length;i++){
             if(planets[i].getDays()>max){
                 max = planets[i].getDays();
             }
-        }System.out.println(max+" days");
+        }//System.out.println(max+" days");
 
         for (int j = 0; j<planets.length;j++){
             if(planets[j].getDays()==max){
-                System.out.println(planets[j].name());
-
+                ordinal = planets[j].ordinal();
+                //System.out.println(planets[j].name());
             }
         }
-        return null;
-
+        return planets[ordinal];
     }
 
-    static  Planet findAPlanetThatIsLessThanDays(Planet[] planets){
-        System.out.println("Planets with fewer days");
-        for (Planet p:planets) {
 
-            if(p.getDays()<1000){
-                System.out.println(p.name()+" has " +p.getDays()+" days");
-            }
-        }
-        return null;
-    }
-
-    static  Planet findAPlanetThatIsMoreThanDays(Planet[] planets){
-        System.out.println("Planets with more days");
-        for (Planet p:planets) {
-            if(p.getDays()>1000){
-                System.out.println(p.name()+" has " +p.getDays()+" days");
-            }
-        }
-        return null;
-    }
 
 }
